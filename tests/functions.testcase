@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testCase id="32">
+  <summary/>
+  <steps>
+    <apiCall apiId="com.provar.plugins.forcedotcom.core.testapis.ApexConnect" name="ApexConnect" testItemId="1" title="Salesforce Connect: Admin (Test)">
+      <tags/>
+      <arguments>
+        <argument id="connectionName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultName">
+          <value class="value" valueClass="string">Admin</value>
+        </argument>
+        <argument id="resultScope">
+          <value class="value" valueClass="string">Test</value>
+        </argument>
+        <argument id="uiApplicationName">
+          <value class="value" valueClass="string">LightningSales</value>
+        </argument>
+        <argument id="quickUiLogin">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="closeAllPrimaryTabs">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="reuseConnectionName"/>
+        <argument id="alreadyOpenBehaviour">
+          <value class="value" valueClass="string">Fail</value>
+        </argument>
+        <argument id="privateBrowsingMode"/>
+        <argument id="enableObjectIdLogging">
+          <value class="value" valueClass="boolean">true</value>
+        </argument>
+        <argument id="autoCleanup"/>
+        <argument id="cleanupConnectionName"/>
+        <argument id="logFileLocation"/>
+        <argument id="username"/>
+        <argument id="password"/>
+        <argument id="securityToken"/>
+        <argument id="environment"/>
+        <argument id="lightningMode">
+          <value class="value" valueClass="string">default</value>
+        </argument>
+        <argument id="webBrowser"/>
+      </arguments>
+    </apiCall>
+    <apiCall apiId="com.provar.plugins.bundled.apis.control.SetValues" name="SetValues" testItemId="2" title="Set Values: TestcaseName">
+      <arguments>
+        <argument id="values">
+          <value class="valueList" mutable="Mutable">
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">EnvVariable</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="GetEnvironmentVariable">
+                  <argument id="variableName">
+                    <value class="value" valueClass="string">JAVA_HOME</value>
+                  </argument>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">OSName</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="GetEnvironmentVariable">
+                  <argument id="variableName">
+                    <value class="value" valueClass="string">OS</value>
+                  </argument>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">SelectedEnv</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="GetSelectedEnvironment"/>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">not</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="Not">
+                  <argument id="value">
+                    <value class="gt">
+                      <lhs class="value" valueClass="decimal">2</lhs>
+                      <rhs class="value" valueClass="decimal">7</rhs>
+                    </value>
+                  </argument>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">down</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="Round">
+                  <argument id="number">
+                    <value class="value" valueClass="decimal">3.999</value>
+                  </argument>
+                  <argument id="toDecimalPlaces">
+                    <value class="value" valueClass="decimal">2</value>
+                  </argument>
+                  <argument id="roundingMode">
+                    <value class="variable">
+                      <path element="DOWN"/>
+                    </value>
+                  </argument>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">up</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="Round">
+                  <argument id="number">
+                    <value class="value" valueClass="decimal">3.999</value>
+                  </argument>
+                  <argument id="toDecimalPlaces">
+                    <value class="value" valueClass="decimal">2</value>
+                  </argument>
+                  <argument id="roundingMode">
+                    <value class="variable">
+                      <path element="UP"/>
+                    </value>
+                  </argument>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">floor</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="Round">
+                  <argument id="number">
+                    <value class="value" valueClass="decimal">3.999</value>
+                  </argument>
+                  <argument id="toDecimalPlaces">
+                    <value class="value" valueClass="decimal">2</value>
+                  </argument>
+                  <argument id="roundingMode">
+                    <value class="variable">
+                      <path element="FLOOR"/>
+                    </value>
+                  </argument>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">stringNormalize</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="StringReplace">
+                  <argument id="sourceString">
+                    <value class="value" valueClass="string"> hello  sir </value>
+                  </argument>
+                  <argument id="findString">
+                    <value class="value" valueClass="string">hello</value>
+                  </argument>
+                  <argument id="replacementString">
+                    <value class="value" valueClass="string">Kya hal</value>
+                  </argument>
+                </value>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+            <namedValues mutable="Mutable">
+              <namedValue name="valuePath">
+                <value class="value" valueClass="string">TestcaseName</value>
+              </namedValue>
+              <namedValue name="value">
+                <value class="funcCall" id="TestCaseName"/>
+              </namedValue>
+              <namedValue name="valueScope">
+                <value class="value" valueClass="string">Test</value>
+              </namedValue>
+            </namedValues>
+          </value>
+        </argument>
+      </arguments>
+    </apiCall>
+  </steps>
+</testCase>
